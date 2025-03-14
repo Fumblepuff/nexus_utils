@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../utils/text_format.dart';
 
-class InfoTooltip extends StatelessWidget {
+class InfoTooltipButton extends StatelessWidget {
   final String infoText;
-  const InfoTooltip({super.key, required this.infoText});
+  const InfoTooltipButton({super.key, required this.infoText});
 
   @override
   Widget build(BuildContext context) {
