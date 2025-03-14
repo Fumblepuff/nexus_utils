@@ -47,3 +47,28 @@ String formatDate(
     return '${date.month}$separator${date.day}${showYear ? '$separator$year' : ''}';
   }
 }
+
+// Button Styles
+ButtonStyle greenButtonStyle = ElevatedButton.styleFrom(
+  foregroundColor: Colors.green.shade900,
+  backgroundColor: Colors.green.shade200,
+  textStyle: roboto,
+);
+
+ButtonStyle redButtonStyle = ElevatedButton.styleFrom(
+  foregroundColor: Colors.red.shade900,
+  backgroundColor: Colors.red.shade200,
+  textStyle: roboto,
+);
+
+ButtonStyle blueButtonStyle = ElevatedButton.styleFrom(
+  foregroundColor: Colors.blue.shade900,
+  backgroundColor: Colors.blue.shade200,
+  textStyle: roboto,
+);
+
+ButtonStyle yellowButtonStyle = ElevatedButton.styleFrom(
+  foregroundColor: Colors.yellow.shade900,
+  backgroundColor: Colors.yellow.shade200,
+  textStyle: roboto,
+);
