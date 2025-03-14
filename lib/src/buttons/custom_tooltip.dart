@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/text_format.dart';
+import '../utils/format.dart';
 
 class CustomTooltip extends StatelessWidget {
   final String message;

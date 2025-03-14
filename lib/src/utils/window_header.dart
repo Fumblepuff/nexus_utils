@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../utils/text_format.dart';
+import 'format.dart';
 import '../buttons/info_tooltip.dart';
 
 class WindowHeader extends StatelessWidget {
