@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'enums.dart';
 
+// Text Styles
 TextStyle roboto = GoogleFonts.robotoMono(
   fontSize: 16,
   fontWeight: FontWeight.w500,
@@ -34,30 +35,6 @@ TextStyle captionStyle = const TextStyle(
   fontWeight: FontWeight.w400,
 );
 
-String formatDate(
-  DateTime date, {
-  bool textMonth = false,
-  bool shortMonth = true,
-  bool showYear = true,
-  bool shortYear = false,
-  String separator = '/',
-}) {
-  String year = date.year.toString();
-  if (shortYear) {
-    year = year.substring(2);
-  }
-  if (textMonth) {
-    Months month = Months.fromNumber(date.month);
-    if (shortMonth) {
-      return '${month.short} ${date.day}${showYear ? ', $year' : ''}';
-    } else {
-      return '${month.full} ${date.day}${showYear ? ', $year' : ''}';
-    }
-  } else {
-    return '${date.month}$separator${date.day}${showYear ? '$separator$year' : ''}';
-  }
-}
-
 // Button Styles
 ButtonStyle greenButtonStyle = ElevatedButton.styleFrom(
   foregroundColor: Colors.green.shade900,
@@ -82,3 +59,49 @@ ButtonStyle yellowButtonStyle = ElevatedButton.styleFrom(
   backgroundColor: Colors.yellow.shade200,
   textStyle: roboto,
 );
+
+// Text Formatting
+String formatDate(
+  DateTime date, {
+  bool textMonth = false,
+  bool shortMonth = true,
+  bool showYear = true,
+  bool shortYear = false,
+  String separator = '/',
+}) {
+  String year = date.year.toString();
+  if (shortYear) {
+    year = year.substring(2);
+  }
+  if (textMonth) {
+    Months month = Months.fromNumber(date.month);
+    if (shortMonth) {
+      return '${month.short} ${date.day}${showYear ? ', $year' : ''}';
+    } else {
+      return '${month.full} ${date.day}${showYear ? ', $year' : ''}';
+    }
+  } else {
+    return '${date.month}$separator${date.day}${showYear ? '$separator$year' : ''}';
+  }
+}
+
+String timeFormat(DateTime date) {
+  int hour = date.hour;
+  int minute = date.minute;
+  String ampm = 'AM';
+  if (hour > 12) {
+    hour -= 12;
+    ampm = 'PM';
+  }
+  if (hour == 0) {
+    hour = 12;
+  }
+  if (hour == 12) {
+    ampm = 'PM';
+  }
+  if (minute < 10) {
+    return '$hour:0$minute $ampm';
+  } else {
+    return '$hour:$minute $ampm';
+  }
+}
