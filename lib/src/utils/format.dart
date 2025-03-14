@@ -24,6 +24,16 @@ TextStyle subheaderStyle = const TextStyle(
   fontWeight: FontWeight.w500,
 );
 
+TextStyle bodyStyle = const TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+);
+
+TextStyle captionStyle = const TextStyle(
+  fontSize: 12,
+  fontWeight: FontWeight.w400,
+);
+
 String formatDate(
   DateTime date, {
   bool textMonth = false,
