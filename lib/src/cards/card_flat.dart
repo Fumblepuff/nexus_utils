@@ -9,7 +9,7 @@ class FlatCard extends StatelessWidget {
   final Curve curve;
   const FlatCard({
     super.key,
-    required this.width,
+    this.width,
     this.height,
     this.padding = 15,
     required this.child,
