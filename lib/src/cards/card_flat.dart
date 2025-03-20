@@ -6,6 +6,7 @@ class FlatCard extends StatelessWidget {
   final double padding;
   final Widget child;
   final Color? borderColor;
+  final Color? backgroundColor;
   final Curve curve;
   const FlatCard({
     super.key,
@@ -14,6 +15,7 @@ class FlatCard extends StatelessWidget {
     this.padding = 15,
     required this.child,
     this.borderColor,
+    this.backgroundColor,
     this.curve = Curves.easeInOut,
   });
 
@@ -27,7 +29,7 @@ class FlatCard extends StatelessWidget {
         height: height,
         padding: EdgeInsets.all(padding),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.5),
+          color: backgroundColor ?? Colors.white.withOpacity(0.5),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: borderColor ?? Colors.grey.withOpacity(0.5),
