@@ -14,6 +14,7 @@ export 'src/buttons/sidebar_button.dart';
 export 'src/buttons/custom_popup_menu.dart';
 export 'src/buttons/info_tooltip.dart';
 export 'src/buttons/custom_tooltip.dart';
+export 'src/buttons/flat_menu_button.dart';
 
 /// Cards
 export 'src/cards/card_flat.dart';
