@@ -7,6 +7,7 @@ export 'src/utils/window_header.dart';
 export 'src/utils/gradients.dart';
 export 'src/utils/background.dart';
 export 'src/utils/functions.dart';
+export 'src/utils/basic_page.dart';
 
 /// Buttons
 export 'src/buttons/hover_button.dart';
