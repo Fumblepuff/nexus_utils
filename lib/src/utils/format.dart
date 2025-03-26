@@ -105,3 +105,15 @@ String timeFormat(DateTime date) {
     return '$hour:$minute $ampm';
   }
 }
+
+String formatDateTime(DateTime date) {
+  return '${formatDate(date)} ${timeFormat(date)}';
+}
+
+String phoneFormat(String phone) {
+  phone = phone.replaceAll(RegExp(r'\D'), '');
+  if (phone.length != 10) {
+    return phone;
+  }
+  return '(${phone.substring(0, 3)}) ${phone.substring(3, 6)}-${phone.substring(6, 10)}';
+}
