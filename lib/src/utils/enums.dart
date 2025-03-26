@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum Months {
   january(1, 'January', 'Jan'),
   february(2, 'February', 'Feb'),
@@ -20,5 +22,22 @@ enum Months {
 
   static Months fromNumber(int number) {
     return Months.values.firstWhere((month) => month.number == number);
+  }
+}
+
+enum ProspectStatus {
+  newProspect(0, 'New Prospect', Colors.blue),
+  pursuing(1, 'Pursuing', Colors.green),
+  deliberating(2, 'Deliberating', Colors.orange),
+  lost(3, 'Lost', Colors.red);
+
+  final int id;
+  final String name;
+  final Color color;
+
+  const ProspectStatus(this.id, this.name, this.color);
+
+  static ProspectStatus fromId(int id) {
+    return ProspectStatus.values.firstWhere((status) => status.id == id);
   }
 }
