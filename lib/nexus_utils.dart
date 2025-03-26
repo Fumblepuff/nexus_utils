@@ -8,6 +8,8 @@ export 'src/utils/gradients.dart';
 export 'src/utils/background.dart';
 export 'src/utils/functions.dart';
 export 'src/utils/basic_page.dart';
+export 'src/utils/extensions.dart';
+export 'src/utils/enums.dart';
 
 /// Buttons
 export 'src/buttons/hover_button.dart';
