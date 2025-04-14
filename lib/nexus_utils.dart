@@ -10,6 +10,7 @@ export 'src/utils/functions.dart';
 export 'src/utils/basic_page.dart';
 export 'src/utils/extensions.dart';
 export 'src/utils/enums.dart';
+export 'src/utils/custom_tab_bar.dart';
 
 /// Buttons
 export 'src/buttons/hover_button.dart';
