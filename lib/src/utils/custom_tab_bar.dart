@@ -8,6 +8,8 @@ class CustomTabBar extends StatefulWidget {
   final Color? indicatorColor;
   final double? indicatorWeight;
   final TabBarIndicatorSize? indicatorSize;
+  final TextStyle? labelStyle;
+  final Function(int)? onTap;
   const CustomTabBar({
     super.key,
     required this.tabs,
@@ -16,7 +18,9 @@ class CustomTabBar extends StatefulWidget {
     this.indicatorColor,
     this.indicatorWeight,
     this.indicatorSize,
-  });
+    this.labelStyle,
+    this.onTap,
+  }) : assert(tabs.length == 0, 'Tabs cannot be empty');
 
   @override
   State<CustomTabBar> createState() => _CustomTabBarState();
@@ -26,6 +30,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
   @override
   Widget build(BuildContext context) {
     return TabBar(
+      onTap: widget.onTap,
       labelColor: widget.labelColor ?? Colors.black,
       unselectedLabelColor: widget.unselectedLabelColor ?? Colors.grey,
       indicatorColor: widget.indicatorColor ?? Colors.black.withOpacity(0.5),
@@ -36,7 +41,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
         topRight: Radius.circular(30),
       ),
       enableFeedback: true,
-      labelStyle: roboto,
+      labelStyle: widget.labelStyle ?? roboto,
       tabs: widget.tabs,
     );
   }
