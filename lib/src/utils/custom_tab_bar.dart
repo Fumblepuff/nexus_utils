@@ -20,7 +20,7 @@ class CustomTabBar extends StatefulWidget {
     this.indicatorSize,
     this.labelStyle,
     this.onTap,
-  }) : assert(tabs.length == 0, 'Tabs cannot be empty');
+  });
 
   @override
   State<CustomTabBar> createState() => _CustomTabBarState();
