@@ -41,3 +41,30 @@ enum ProspectStatus {
     return ProspectStatus.values.firstWhere((status) => status.id == id);
   }
 }
+
+enum DefaultColors {
+  pink(0, Colors.pink, Colors.white),
+  red(1, Colors.red, Colors.white),
+  orange(2, Colors.orange, Colors.white),
+  amber(3, Colors.amber, Colors.white),
+  yellow(4, Colors.yellow, Colors.black),
+  lime(5, Colors.lime, Colors.black),
+  green(6, Colors.green, Colors.white),
+  teal(7, Colors.teal, Colors.white),
+  cyan(8, Colors.cyan, Colors.white),
+  blue(9, Colors.blue, Colors.white),
+  indigo(10, Colors.indigo, Colors.white),
+  purple(11, Colors.purple, Colors.white),
+  deepPurple(12, Colors.deepPurple, Colors.white),
+  ;
+
+  final int id;
+  final Color color;
+  final Color textColor;
+
+  const DefaultColors(this.id, this.color, this.textColor);
+
+  static DefaultColors fromId(int id) {
+    return DefaultColors.values.firstWhere((color) => color.id == id);
+  }
+}
