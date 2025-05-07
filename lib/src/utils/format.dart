@@ -39,26 +39,44 @@ TextStyle captionStyle = const TextStyle(
 ButtonStyle greenButtonStyle = ElevatedButton.styleFrom(
   foregroundColor: Colors.green.shade900,
   backgroundColor: Colors.green.shade200,
-  textStyle: roboto,
+  textStyle: roboto.copyWith(
+    fontSize: 14,
+  ),
 );
 
 ButtonStyle redButtonStyle = ElevatedButton.styleFrom(
   foregroundColor: Colors.red.shade900,
   backgroundColor: Colors.red.shade200,
-  textStyle: roboto,
+  textStyle: roboto.copyWith(
+    fontSize: 14,
+  ),
 );
 
 ButtonStyle blueButtonStyle = ElevatedButton.styleFrom(
   foregroundColor: Colors.blue.shade900,
   backgroundColor: Colors.blue.shade200,
-  textStyle: roboto,
+  textStyle: roboto.copyWith(
+    fontSize: 14,
+  ),
 );
 
 ButtonStyle yellowButtonStyle = ElevatedButton.styleFrom(
   foregroundColor: Colors.yellow.shade900,
   backgroundColor: Colors.yellow.shade200,
-  textStyle: roboto,
+  textStyle: roboto.copyWith(
+    fontSize: 14,
+  ),
 );
+
+ButtonStyle get inactiveButtonStyle {
+  return ElevatedButton.styleFrom(
+    foregroundColor: Colors.grey.shade700,
+    backgroundColor: Colors.grey.shade300,
+    textStyle: roboto.copyWith(
+      fontSize: 14,
+    ),
+  );
+}
 
 // Text Formatting
 String formatDate(
@@ -116,4 +134,30 @@ String phoneFormat(String phone) {
     return phone;
   }
   return '(${phone.substring(0, 3)}) ${phone.substring(3, 6)}-${phone.substring(6, 10)}';
+}
+
+String timestampFormat(TimeOfDay time) {
+  int hour = time.hour;
+  int minute = time.minute;
+  if (hour > 12) {
+    hour -= 12;
+  }
+  if (minute < 10) {
+    return '$hour:0$minute';
+  }
+  return '$hour:$minute';
+}
+
+String fullTimeStamp(TimeOfDay time) {
+  int hour = time.hour;
+  int minute = time.minute;
+  String ampm = 'AM';
+  if (hour > 12) {
+    hour -= 12;
+    ampm = 'PM';
+  }
+  if (minute < 10) {
+    return '$hour:0$minute $ampm';
+  }
+  return '$hour:$minute $ampm';
 }
