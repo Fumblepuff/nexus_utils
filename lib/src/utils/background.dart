@@ -17,14 +17,14 @@ class Background extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Colors.blue.withOpacity(0.1),
-            Colors.white.withOpacity(0.2),
-            Colors.blue.withOpacity(0.1),
+            Colors.blue.withValues(alpha: 0.1),
+            Colors.white.withValues(alpha: 0.2),
+            Colors.blue.withValues(alpha: 0.1),
           ],
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
+            color: Colors.black.withValues(alpha: 0.2),
             blurRadius: 8,
             offset: const Offset(8, 15),
           ),
@@ -44,10 +44,10 @@ class Background extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               border: Border.all(
-                color: Colors.blueGrey.withOpacity(0.2),
+                color: Colors.blueGrey.withValues(alpha: 0.2),
                 width: 1,
               ),
-              color: Colors.white.withOpacity(0.5),
+              color: Colors.white.withValues(alpha: 0.5),
             ),
           ),
           child,

@@ -33,7 +33,8 @@ class _CustomTabBarState extends State<CustomTabBar> {
       onTap: widget.onTap,
       labelColor: widget.labelColor ?? Colors.black,
       unselectedLabelColor: widget.unselectedLabelColor ?? Colors.grey,
-      indicatorColor: widget.indicatorColor ?? Colors.black.withOpacity(0.5),
+      indicatorColor:
+          widget.indicatorColor ?? Colors.black.withValues(alpha: 0.5),
       indicatorWeight: widget.indicatorWeight ?? 3,
       indicatorSize: widget.indicatorSize ?? TabBarIndicatorSize.label,
       splashBorderRadius: const BorderRadius.only(

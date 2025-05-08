@@ -29,10 +29,10 @@ class FlatCard extends StatelessWidget {
         height: height,
         padding: EdgeInsets.all(padding),
         decoration: BoxDecoration(
-          color: backgroundColor ?? Colors.white.withOpacity(0.5),
+          color: backgroundColor ?? Colors.white.withValues(alpha: 0.5),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: borderColor ?? Colors.grey.withOpacity(0.5),
+            color: borderColor ?? Colors.grey.withValues(alpha: 0.5),
             width: 1,
           ),
         ),

@@ -55,7 +55,7 @@ class _SidebarButtonState extends State<SidebarButton> {
                     color: widget.isSelected
                         ? Colors.lightBlue
                         : hover
-                            ? Colors.blue.withOpacity(0.5)
+                            ? Colors.blue.withValues(alpha: 0.5)
                             : Colors.transparent,
                     borderRadius: BorderRadius.circular(30),
                   ),
