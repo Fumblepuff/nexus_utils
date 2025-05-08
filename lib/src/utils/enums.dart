@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 enum Months {
   january(1, 'January', 'Jan'),
@@ -66,5 +67,36 @@ enum DefaultColors {
 
   static DefaultColors fromId(int id) {
     return DefaultColors.values.firstWhere((color) => color.id == id);
+  }
+}
+
+enum StudentActivity {
+  checkIn('Check In', Colors.green, FontAwesomeIcons.check, 'in'),
+  dropOff('Drop Off', Colors.green, FontAwesomeIcons.carOn, 'in'),
+  pickUp('Pick Up', Colors.blue, FontAwesomeIcons.carRear, 'out'),
+  checkOut('Check Out', Colors.blue, FontAwesomeIcons.userAstronaut, 'out'),
+  handOff('Hand Off', Colors.purple, FontAwesomeIcons.handshake, 'out'),
+  injury('Injury', Colors.red, FontAwesomeIcons.userInjured),
+  discipline('Discipline', Colors.orange, FontAwesomeIcons.userNinja),
+  diaper('Diaper', Colors.pinkAccent, FontAwesomeIcons.baby),
+  nap('Nap', Colors.purple, FontAwesomeIcons.bed),
+  meal('Meal', Colors.lightBlue, FontAwesomeIcons.utensils);
+
+  final String title;
+  final Color color;
+  final IconData icon;
+  final String timeLabel;
+
+  const StudentActivity(this.title, this.color, this.icon,
+      [this.timeLabel = 'time']);
+
+  static StudentActivity fromTitle(String title) {
+    return StudentActivity.values
+        .firstWhere((activity) => activity.title == title);
+  }
+
+  static StudentActivity fromIcon(IconData icon) {
+    return StudentActivity.values
+        .firstWhere((activity) => activity.icon == icon);
   }
 }
