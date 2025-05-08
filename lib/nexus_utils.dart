@@ -31,3 +31,14 @@ export 'src/icons/icon_loading_shimmer.dart';
 /// Markdown
 export 'src/markdown/markdown_parser.dart';
 export 'src/markdown/markdown_editor.dart';
+
+/// Timelines
+export 'src/timelines/connector_theme.dart';
+export 'src/timelines/connectors.dart';
+export 'src/timelines/indicator_theme.dart';
+export 'src/timelines/indicators.dart';
+export 'src/timelines/timelines.dart';
+export 'src/timelines/timeline_node.dart';
+export 'src/timelines/timeline_theme.dart';
+export 'src/timelines/timeline_tile.dart';
+export 'src/timelines/timeline_tile_builder.dart';
