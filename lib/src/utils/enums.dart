@@ -71,24 +71,32 @@ enum DefaultColors {
 }
 
 enum StudentActivity {
-  checkIn('Check In', Colors.green, FontAwesomeIcons.check, 'in'),
-  dropOff('Drop Off', Colors.green, FontAwesomeIcons.carOn, 'in'),
-  pickUp('Pick Up', Colors.blue, FontAwesomeIcons.carRear, 'out'),
-  checkOut('Check Out', Colors.blue, FontAwesomeIcons.userAstronaut, 'out'),
-  handOff('Hand Off', Colors.purple, FontAwesomeIcons.handshake, 'out'),
-  injury('Injury', Colors.red, FontAwesomeIcons.userInjured),
-  discipline('Discipline', Colors.orange, FontAwesomeIcons.userNinja),
-  diaper('Diaper', Colors.pinkAccent, FontAwesomeIcons.baby),
-  nap('Nap', Colors.purple, FontAwesomeIcons.bed),
-  meal('Meal', Colors.lightBlue, FontAwesomeIcons.utensils);
+  checkIn('checkIn', 'Check In', Colors.green, FontAwesomeIcons.check, 'in'),
+  dropOff('dropOff', 'Drop Off', Colors.green, FontAwesomeIcons.carOn, 'in'),
+  pickUp('pickUp', 'Pick Up', Colors.blue, FontAwesomeIcons.carRear, 'out'),
+  checkOut('checkOut', 'Check Out', Colors.blue, FontAwesomeIcons.userAstronaut,
+      'out'),
+  handOff(
+      'handOff', 'Hand Off', Colors.purple, FontAwesomeIcons.handshake, 'out'),
+  injury('injury', 'Injury', Colors.red, FontAwesomeIcons.userInjured),
+  discipline(
+      'discipline', 'Discipline', Colors.orange, FontAwesomeIcons.userNinja),
+  diaper('diaper', 'Diaper', Colors.pinkAccent, FontAwesomeIcons.baby),
+  nap('nap', 'Nap', Colors.purple, FontAwesomeIcons.bed),
+  meal('meal', 'Meal', Colors.lightBlue, FontAwesomeIcons.utensils);
 
+  final String id;
   final String title;
   final Color color;
   final IconData icon;
   final String timeLabel;
 
-  const StudentActivity(this.title, this.color, this.icon,
+  const StudentActivity(this.id, this.title, this.color, this.icon,
       [this.timeLabel = 'time']);
+
+  static StudentActivity fromId(String id) {
+    return StudentActivity.values.firstWhere((activity) => activity.id == id);
+  }
 
   static StudentActivity fromTitle(String title) {
     return StudentActivity.values
