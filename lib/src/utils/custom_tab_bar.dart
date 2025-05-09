@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'format.dart';
 
 class CustomTabBar extends StatefulWidget {
+  /// A custom tab bar widget that allows for customization of label colors,
+  /// unselected label colors, indicator color, weight, size, and label style.
+  ///
   final List<Widget> tabs;
   final Color? labelColor;
   final Color? unselectedLabelColor;
