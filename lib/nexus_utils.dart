@@ -27,6 +27,7 @@ export 'src/cards/card_white.dart';
 /// Icons
 export 'src/icons/empty_icons.dart';
 export 'src/icons/icon_loading_shimmer.dart';
+export 'src/icons/grab_bar.dart';
 
 /// Markdown
 export 'src/markdown/markdown_parser.dart';
