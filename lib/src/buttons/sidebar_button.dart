@@ -8,6 +8,12 @@ class SidebarButton extends StatefulWidget {
   final IconData icon;
   final bool isSelected;
   final bool hasNotification;
+  final Color? selectColor;
+  final Color? hoverColor;
+  final Color? textColor;
+  final Color? iconColor;
+  final Color? hoverTextColor;
+  final Color? hoverIconColor;
   const SidebarButton({
     super.key,
     required this.onTap,
@@ -15,6 +21,12 @@ class SidebarButton extends StatefulWidget {
     required this.icon,
     required this.isSelected,
     this.hasNotification = false,
+    this.selectColor = Colors.lightBlue,
+    this.hoverColor = Colors.blue,
+    this.textColor = Colors.black,
+    this.iconColor = Colors.black,
+    this.hoverTextColor = Colors.white,
+    this.hoverIconColor = Colors.white,
   });
 
   @override
@@ -53,9 +65,9 @@ class _SidebarButtonState extends State<SidebarButton> {
                       const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                   decoration: BoxDecoration(
                     color: widget.isSelected
-                        ? Colors.lightBlue
+                        ? widget.selectColor
                         : hover
-                            ? Colors.blue.withValues(alpha: 0.5)
+                            ? widget.hoverColor!.withValues(alpha: 0.5)
                             : Colors.transparent,
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -68,10 +80,10 @@ class _SidebarButtonState extends State<SidebarButton> {
                           widget.label,
                           style: TextStyle(
                             color: widget.isSelected
-                                ? Colors.white
+                                ? widget.textColor
                                 : hover
-                                    ? Colors.white
-                                    : Colors.black,
+                                    ? widget.hoverTextColor
+                                    : widget.textColor,
                             fontWeight: widget.isSelected
                                 ? FontWeight.bold
                                 : FontWeight.normal,
@@ -82,10 +94,10 @@ class _SidebarButtonState extends State<SidebarButton> {
                         widget.icon,
                         size: 20,
                         color: widget.isSelected
-                            ? Colors.white
+                            ? widget.iconColor
                             : hover
-                                ? Colors.white
-                                : Colors.black,
+                                ? widget.hoverIconColor
+                                : widget.iconColor,
                       ),
                     ],
                   ),
