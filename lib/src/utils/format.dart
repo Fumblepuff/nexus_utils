@@ -3,6 +3,22 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'enums.dart';
 
+// Colors
+List<Color> customColors = [
+  const Color(0xFFFFC1CC), // Pastel Pink
+  Colors.pink,
+  const Color(0xFFFFF5BA), // Pastel Yellow
+  Colors.yellow,
+  const Color(0xFFB5EAD7), // Pastel Green
+  Colors.green,
+  const Color(0xFFA0CED9), // Pastel Blue
+  Colors.blue,
+  const Color(0xFFCDB4DB), // Pastel Purple
+  Colors.purple,
+  const Color(0xFFFFD6A5), // Pastel Orange
+  Colors.orange,
+];
+
 // Text Styles
 TextStyle roboto = GoogleFonts.robotoMono(
   fontSize: 16,
