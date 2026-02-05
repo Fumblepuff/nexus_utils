@@ -23,6 +23,8 @@ export 'src/buttons/flat_menu_button.dart';
 /// Cards
 export 'src/cards/card_flat.dart';
 export 'src/cards/card_white.dart';
+export 'src/cards/floating_dialog.dart';
+export 'src/cards/floating_modal.dart';
 
 /// Icons
 export 'src/icons/empty_icons.dart';
