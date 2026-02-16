@@ -7,6 +7,7 @@ class WhiteCard extends StatelessWidget {
   final Widget child;
   final Color? borderColor;
   final Color? backgroundColor;
+  final List<BoxShadow>? boxShadow;
   const WhiteCard({
     super.key,
     this.width,
@@ -15,6 +16,7 @@ class WhiteCard extends StatelessWidget {
     required this.child,
     this.borderColor = Colors.transparent,
     this.backgroundColor = Colors.white,
+    this.boxShadow,
   });
 
   @override
@@ -32,13 +34,14 @@ class WhiteCard extends StatelessWidget {
           border: Border.all(
             color: borderColor!,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.4),
-              blurRadius: 10,
-              offset: const Offset(0, 4),
-            ),
-          ],
+          boxShadow: boxShadow ??
+              [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.4),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
         ),
         child: child,
       ),
