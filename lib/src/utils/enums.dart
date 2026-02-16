@@ -26,6 +26,34 @@ enum Months {
   }
 }
 
+enum Weekday {
+  monday(1, 'Monday', 'Mon', 'M', Colors.red),
+  tuesday(2, 'Tuesday', 'Tue', 'T', Colors.orange),
+  wednesday(3, 'Wednesday', 'Wed', 'W', Colors.yellow),
+  thursday(4, 'Thursday', 'Thu', 'Th', Colors.green),
+  friday(5, 'Friday', 'Fri', 'F', Colors.blue),
+  saturday(6, 'Saturday', 'Sat', 'S', Colors.indigo),
+  sunday(7, 'Sunday', 'Sun', 'Su', Colors.purple);
+
+  final int value;
+  final String fullName;
+  final String shortName;
+  final String singleLetter;
+  final Color color;
+
+  const Weekday(
+    this.value,
+    this.fullName,
+    this.shortName,
+    this.singleLetter,
+    this.color,
+  );
+
+  static Weekday fromValue(int value) {
+    return Weekday.values.firstWhere((day) => day.value == value);
+  }
+}
+
 enum ProspectStatus {
   newProspect(0, 'New Prospect', Colors.blue),
   pursuing(1, 'Pursuing', Colors.green),
