@@ -177,3 +177,13 @@ String fullTimeStamp(TimeOfDay time) {
   }
   return '$hour:$minute $ampm';
 }
+
+String formatDateFromEpoch(int epoch) {
+  DateTime date = DateTime.fromMillisecondsSinceEpoch(epoch);
+  return formatDate(date);
+}
+
+String formatDateTimeFromEpoch(int epoch) {
+  DateTime date = DateTime.fromMillisecondsSinceEpoch(epoch);
+  return formatDateTime(date);
+}
